@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -q update && apt-get -q install curl apache2 libapache2-mod-php5 php5 php5-common php5-mcrypt php5-curl php5-dev php5-gd php-pear php5-imap php5-mcrypt php5-ming php5-mysql php5-xmlrpc gettext php-db php-mdb2 php-mdb2-driver-mysql -y && \
     php5enmod mcrypt && \
-    curl -sLo poweradmin-${POWERADMIN_VERSION}.tgz http://freefr.dl.sourceforge.net/project/poweradmin/poweradmin-${POWERADMIN_VERSION}.tgz && \
+    curl -sLo poweradmin-${POWERADMIN_VERSION}.tgz https://github.com/poweradmin/poweradmin/archive/v${POWERADMIN_VERSION}.tar.gz && \
     tar xf poweradmin-${POWERADMIN_VERSION}.tgz -C /tmp && \
     rm -f /var/www/html/* && \
     mv /tmp/poweradmin-${POWERADMIN_VERSION}/* /var/www/html/ && \
